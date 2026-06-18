@@ -12,6 +12,9 @@ node_modules/
 .env
 .env.production
 
+# vercel
+.vercel/
+
 # logs
 npm-debug.log*
 
@@ -21,3 +24,4 @@ npm-debug.log*
 .codegraph/
 
 CLAUDE.md
+.vercel
