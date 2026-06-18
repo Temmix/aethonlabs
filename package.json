@@ -22,5 +22,8 @@
   },
   "overrides": {
     "@types/node": "17.0.45"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.61.1"
   }
 }
