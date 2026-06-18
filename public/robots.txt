@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aethon-labs.com/sitemap.xml

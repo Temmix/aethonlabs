@@ -1,0 +1,94 @@
+---
+import Legal from '../layouts/Legal.astro';
+import { COMPANY } from '../data/company';
+---
+
+<Legal
+  title="Privacy Policy"
+  description={`How ${COMPANY.legalName} collects, uses and protects personal data.`}
+  path="/privacy"
+  updated="8 June 2026"
+>
+  <p>
+    This policy explains how <strong>{COMPANY.legalName}</strong> ("Aethon Labs", "we", "us")
+    handles personal data collected through this website, <strong>{COMPANY.domain}</strong>. We
+    are committed to protecting your privacy and processing data in line with the UK GDPR and the
+    Data Protection Act 2018.
+  </p>
+  <p>
+    This policy covers our corporate website only. Our products (such as Clinvara) operate under
+    their own, separate privacy notices.
+  </p>
+
+  <h2>Who we are</h2>
+  <p>
+    {COMPANY.legalName} is a {COMPANY.companyType.toLowerCase()} registered in {
+      COMPANY.jurisdiction
+    } (company number {COMPANY.companyNumber}), with its registered office at {
+      COMPANY.registeredOfficeOneLine
+    }. For any data protection queries, contact us at <a href={`mailto:${COMPANY.email}`}
+      >{COMPANY.email}</a
+    >.
+  </p>
+
+  <h2>What we collect</h2>
+  <p>This website is intentionally minimal. We may process:</p>
+  <ul>
+    <li>
+      <strong>Contact details you choose to share</strong> — if you email us, we receive your
+      email address and the contents of your message.
+    </li>
+    <li>
+      <strong>Technical data</strong> — limited information your browser sends automatically (such
+      as IP address and user agent) and any privacy-respecting analytics our hosting provider
+      collects to keep the site secure and reliable.
+    </li>
+  </ul>
+  <p>We do not sell personal data, and we do not use it for advertising.</p>
+
+  <h2>Why we use it (lawful basis)</h2>
+  <ul>
+    <li>To respond to your enquiries — our legitimate interest in communicating with you.</li>
+    <li>To keep the website secure and operational — our legitimate interest in security.</li>
+    <li>To meet legal and regulatory obligations where they apply.</li>
+  </ul>
+
+  <h2>How long we keep it</h2>
+  <p>
+    We retain correspondence only as long as needed to handle your enquiry and for a reasonable
+    period afterwards, then delete it. Technical logs are kept for a short period for security and
+    diagnostics.
+  </p>
+
+  <h2>Sharing</h2>
+  <p>
+    We use trusted service providers (for example, our website host and email provider) who
+    process data on our behalf under appropriate agreements. We may disclose data where required
+    by law. We do not otherwise share your personal data with third parties.
+  </p>
+
+  <h2>Your rights</h2>
+  <p>
+    Under UK data protection law you have rights to access, rectify, erase, restrict and object to
+    the processing of your personal data, and to data portability. To exercise any of these,
+    email <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>. You also have the right to
+    complain to the Information Commissioner's Office (ICO) at <a
+      href="https://ico.org.uk"
+      target="_blank"
+      rel="noopener noreferrer">ico.org.uk</a
+    >.
+  </p>
+
+  <h2>Changes</h2>
+  <p>
+    We may update this policy from time to time. The "last updated" date above reflects the most
+    recent revision.
+  </p>
+
+  <p>
+    <em
+      >This notice is provided for transparency and does not constitute legal advice. It will be
+      reviewed as our products and processing activities develop.</em
+    >
+  </p>
+</Legal>

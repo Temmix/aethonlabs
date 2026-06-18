@@ -1,0 +1,93 @@
+---
+import { COMPANY } from '../data/company';
+
+const credibility = [
+  'UK Limited Company',
+  `Company No. ${COMPANY.companyNumber}`,
+  `Est. ${COMPANY.establishedYear}`,
+];
+---
+
+<section class="relative overflow-hidden pt-16">
+  <div class="pointer-events-none absolute inset-0 grid-fade opacity-60" aria-hidden="true"></div>
+  <div
+    class="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[820px] -translate-x-1/2 rounded-full bg-[var(--color-accent)]/10 blur-[120px]"
+    aria-hidden="true"
+  >
+  </div>
+
+  <div class="container-page relative">
+    <div class="mx-auto max-w-3xl py-24 text-center sm:py-32 lg:py-40">
+      <div
+        class="reveal mb-7 inline-flex items-center gap-2 rounded-full border border-[var(--color-border-strong)] bg-[var(--color-surface)]/60 px-3.5 py-1.5 text-xs font-medium text-[var(--color-fg-muted)]"
+      >
+        <span class="relative flex h-1.5 w-1.5" aria-hidden="true">
+          <span
+            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--color-accent)] opacity-75"
+          ></span>
+          <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]"
+          ></span>
+        </span>
+        Product studio · Clinvara is live
+      </div>
+
+      <h1
+        class="reveal text-balance font-semibold tracking-tight text-[var(--color-fg)]"
+        style="font-size: var(--text-display); line-height: var(--text-display--line-height); letter-spacing: var(--text-display--letter-spacing);"
+      >
+        We design, build and operate
+        <span class="text-[var(--color-accent)]"> software products</span>.
+      </h1>
+
+      <p
+        class="reveal mx-auto mt-6 max-w-xl text-pretty text-lg leading-relaxed text-[var(--color-fg-muted)]"
+        style="animation-delay: 60ms;"
+      >
+        Aethon Labs is a UK software product studio building healthcare-grade SaaS —
+        engineered to standards, secure by default, and made to last. Starting with Clinvara, now live.
+      </p>
+
+      <div
+        class="reveal mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row"
+        style="animation-delay: 120ms;"
+      >
+        <a
+          href="/#products"
+          class="inline-flex w-full items-center justify-center gap-2 rounded-md bg-[var(--color-accent)] px-5 py-3 text-sm font-semibold text-[#04201d] transition-colors hover:bg-[var(--color-accent-strong)] sm:w-auto"
+        >
+          See what we're building
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M5 12h14m-6-6 6 6-6 6"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </a>
+        <a
+          href="/#how"
+          class="inline-flex w-full items-center justify-center rounded-md border border-[var(--color-border-strong)] bg-[var(--color-surface)] px-5 py-3 text-sm font-semibold text-[var(--color-fg)] transition-colors hover:border-[var(--color-accent)] sm:w-auto"
+        >
+          How we build
+        </a>
+      </div>
+
+      <ul
+        class="reveal mt-12 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-xs text-[var(--color-fg-subtle)]"
+        style="animation-delay: 180ms;"
+      >
+        {
+          credibility.map((item, i) => (
+            <>
+              {i > 0 && (
+                <li class="h-1 w-1 rounded-full bg-[var(--color-border-strong)]" aria-hidden="true" />
+              )}
+              <li class="font-medium uppercase tracking-wider">{item}</li>
+            </>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,61 @@
+---
+import { COMPANY } from '../data/company';
+
+const links = [
+  { href: '/#what', label: 'What we do' },
+  { href: '/#products', label: 'Products' },
+  { href: '/#how', label: 'How we build' },
+  { href: '/#company', label: 'Company' },
+];
+---
+
+<header
+  class="fixed inset-x-0 top-0 z-40 border-b border-[var(--color-border)]/70 bg-[var(--color-bg)]/80 backdrop-blur-md"
+>
+  <nav
+    class="container-page flex h-16 items-center justify-between"
+    aria-label="Primary"
+  >
+    <a
+      href="/"
+      class="group flex items-center gap-2.5 text-[var(--color-fg)]"
+      aria-label={`${COMPANY.tradingName} home`}
+    >
+      <span
+        class="grid h-7 w-7 place-items-center rounded-md border border-[var(--color-border-strong)] bg-[var(--color-surface)] text-[var(--color-accent)] transition-colors group-hover:border-[var(--color-accent)]"
+        aria-hidden="true"
+      >
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M12 3 21 20H3L12 3Z"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linejoin="round"></path>
+          <path d="M8.4 16h7.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+          ></path>
+        </svg>
+      </span>
+      <span class="text-[15px] font-semibold tracking-tight">Aethon Labs</span>
+    </a>
+
+    <div class="hidden items-center gap-8 md:flex">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class="text-sm text-[var(--color-fg-muted)] transition-colors hover:text-[var(--color-fg)]"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+
+    <a
+      href={`mailto:${COMPANY.email}`}
+      class="rounded-md border border-[var(--color-border-strong)] bg-[var(--color-surface)] px-3.5 py-1.5 text-sm font-medium text-[var(--color-fg)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
+    >
+      Contact
+    </a>
+  </nav>
+</header>

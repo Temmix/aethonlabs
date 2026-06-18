@@ -1,0 +1,65 @@
+---
+import SectionHeading from './SectionHeading.astro';
+import { COMPANY } from '../data/company';
+
+const facts = [
+  { label: 'Registered name', value: COMPANY.legalName },
+  { label: 'Company number', value: COMPANY.companyNumber, href: COMPANY.companiesHouseUrl },
+  { label: 'Company type', value: COMPANY.companyType },
+  { label: 'Incorporated', value: COMPANY.incorporatedLabel },
+  { label: 'Director', value: COMPANY.director },
+  { label: 'Nature of business', value: `${COMPANY.sicCode} — ${COMPANY.sicDescription}` },
+  { label: 'Registered office', value: COMPANY.registeredOfficeOneLine },
+  { label: 'Jurisdiction', value: COMPANY.jurisdiction },
+];
+---
+
+<section id="company" class="scroll-mt-20 border-t border-[var(--color-border)] py-24 sm:py-28">
+  <div class="container-page">
+    <div class="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-16">
+      <SectionHeading
+        eyebrow="Company"
+        title="A real, registered UK company."
+        description="Aethon Labs is incorporated in England & Wales. Everything below is on the public register — because credibility should be verifiable, not asserted."
+      />
+
+      <dl
+        class="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-border)] sm:grid-cols-2"
+        data-reveal
+      >
+        {
+          facts.map((fact) => (
+            <div class="bg-[var(--color-surface)] p-5">
+              <dt class="text-xs font-medium uppercase tracking-wider text-[var(--color-fg-subtle)]">
+                {fact.label}
+              </dt>
+              <dd class="mt-1.5 text-[15px] font-medium text-[var(--color-fg)]">
+                {fact.href ? (
+                  <a
+                    href={fact.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1.5 text-[var(--color-accent)] underline-offset-4 hover:underline"
+                  >
+                    {fact.value}
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path
+                        d="M7 17 17 7M9 7h8v8"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </a>
+                ) : (
+                  fact.value
+                )}
+              </dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </div>
+</section>

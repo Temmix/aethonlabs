@@ -1,0 +1,56 @@
+---
+import SectionHeading from './SectionHeading.astro';
+
+const pillars = [
+  {
+    title: 'Design',
+    body: 'We start from the problem and the people. Careful product thinking, clear interfaces, and accessibility treated as a requirement — not a retrofit.',
+    icon: 'M4 7h16M4 12h10M4 17h7',
+  },
+  {
+    title: 'Build',
+    body: 'Modern, typed, well-tested engineering. FastAPI, React and TypeScript on infrastructure chosen for reliability, security and the long term.',
+    icon: 'M8 9 5 12l3 3m8-6 3 3-3 3M13 6l-2 12',
+  },
+  {
+    title: 'Operate',
+    body: 'We run what we ship. Monitoring, security, compliance and support are part of the product — because trust is earned in production, every day.',
+    icon: 'M12 3v3m0 12v3m9-9h-3M6 12H3m13.5-6.5-2.1 2.1m-4.8 4.8-2.1 2.1m0-9 2.1 2.1m4.8 4.8 2.1 2.1',
+  },
+];
+---
+
+<section id="what" class="scroll-mt-20 border-t border-[var(--color-border)] py-24 sm:py-28">
+  <div class="container-page">
+    <SectionHeading
+      eyebrow="What we do"
+      title="A product studio — we build, ship and run our own SaaS."
+      description="Aethon Labs isn't an agency for hire by default. We invest in our own products end to end: from first principle to live service, and everything in between."
+    />
+
+    <div class="mt-14 grid gap-px overflow-hidden rounded-xl border border-[var(--color-border)] bg-[var(--color-border)] sm:grid-cols-3" data-reveal>
+      {
+        pillars.map((p) => (
+          <div class="bg-[var(--color-surface)] p-7">
+            <span
+              class="grid h-10 w-10 place-items-center rounded-lg border border-[var(--color-border-strong)] bg-[var(--color-bg-elevated)] text-[var(--color-accent)]"
+              aria-hidden="true"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path
+                  d={p.icon}
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            <h3 class="mt-5 text-lg font-semibold text-[var(--color-fg)]">{p.title}</h3>
+            <p class="mt-2 text-[15px] leading-relaxed text-[var(--color-fg-muted)]">{p.body}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

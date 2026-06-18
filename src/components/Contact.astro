@@ -1,0 +1,41 @@
+---
+import { COMPANY } from '../data/company';
+---
+
+<section id="contact" class="scroll-mt-20 border-t border-[var(--color-border)] py-24 sm:py-28">
+  <div class="container-page">
+    <div
+      class="relative overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] px-8 py-16 text-center sm:px-16"
+      data-reveal
+    >
+      <div
+        class="pointer-events-none absolute left-1/2 top-0 h-64 w-[640px] -translate-x-1/2 rounded-full bg-[var(--color-accent)]/10 blur-[100px]"
+        aria-hidden="true"
+      >
+      </div>
+      <div class="relative mx-auto max-w-xl">
+        <h2 class="text-balance text-3xl font-semibold tracking-tight text-[var(--color-fg)] sm:text-4xl">
+          Let's talk.
+        </h2>
+        <p class="mt-4 text-pretty text-lg leading-relaxed text-[var(--color-fg-muted)]">
+          Press, partnerships, or questions about what we're building — reach the team
+          directly.
+        </p>
+        <a
+          href={`mailto:${COMPANY.email}`}
+          class="mt-8 inline-flex items-center gap-2.5 rounded-md bg-[var(--color-accent)] px-6 py-3 text-sm font-semibold text-[#04201d] transition-colors hover:bg-[var(--color-accent-strong)]"
+        >
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M3 7.5 12 13l9-5.5M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+          {COMPANY.email}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

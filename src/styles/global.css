@@ -1,0 +1,109 @@
+@import 'tailwindcss';
+
+/* ------------------------------------------------------------------ *
+ * Design tokens — restrained, technical, premium.
+ * Near-black neutral base, a single blue-teal accent. Change --color-accent
+ * (and -strong / -soft) to re-theme the whole site from one place.
+ * ------------------------------------------------------------------ */
+@theme {
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Neutral base */
+  --color-bg: #0a0b0d;
+  --color-bg-elevated: #101216;
+  --color-surface: #121419;
+  --color-border: #1f232b;
+  --color-border-strong: #2b313b;
+
+  /* Foreground */
+  --color-fg: #eef1f6;
+  --color-fg-muted: #a3abb8;
+  --color-fg-subtle: #6c7480;
+
+  /* Accent — calm technical blue-teal */
+  --color-accent: #2dd4bf;
+  --color-accent-strong: #14b8a6;
+  --color-accent-soft: #0d2b2a;
+
+  /* Type scale */
+  --text-display: clamp(2.6rem, 5.5vw, 4.6rem);
+  --text-display--line-height: 1.04;
+  --text-display--letter-spacing: -0.03em;
+}
+
+/* ------------------------------------------------------------------ *
+ * Base
+ * ------------------------------------------------------------------ */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #04201d;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* ------------------------------------------------------------------ *
+ * Reusable utilities
+ * ------------------------------------------------------------------ */
+@utility container-page {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 72rem;
+  padding-inline: 1.5rem;
+}
+
+/* Subtle entrance animation, opt-in via .reveal; respects reduced-motion above */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  animation: reveal-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Hairline grid / glow accents */
+.grid-fade {
+  background-image:
+    linear-gradient(to right, var(--color-border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-border) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 75%);
+}
